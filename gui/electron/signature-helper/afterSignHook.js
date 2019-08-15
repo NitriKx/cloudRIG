@@ -16,7 +16,8 @@ module.exports = async function (params) {
 	}
 
 	// Same appId in electron-builder.
-	let appId = require('./package.json').build.appId;
+	let appId = require('../package.json').build.appId;
+        console.log('Using appId: ' + appId);
 
 	let appPath = path.join(params.appOutDir, `${params.packager.appInfo.productFilename}.app`);
 	if (!fs.existsSync(appPath)) {
